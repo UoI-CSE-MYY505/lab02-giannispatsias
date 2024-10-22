@@ -13,6 +13,17 @@ prog:
 # Write your code here!
 # Do not remove the prog label or write code above it!
 #-----------------------------
-done:
+findLast_forwards_withPointers:
+    add  s0, zero, zero 
+loop1:
+    beq  a1, zero, done1  
+    lw   t1, 0(a0)
+    bne  t1, a2, next1
+    add  s0, a0, zero  
+next1: 
+    addi a0, a0, 4
+    addi a1, a1, -1
+    j    loop1
+done1:
     addi a7, zero, 10 
     ecall
